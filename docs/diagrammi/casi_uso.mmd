@@ -1,0 +1,15 @@
+flowchart LR
+  V([Visitatore])
+  A([Amministratore])
+  subgraph SIS["MuseoDigitale"]
+    UC1([Consultare il catalogo])
+    UC2([Registrarsi e accedere])
+    UC3([Prenotare un evento])
+    UC4([Annullare una prenotazione])
+    UC5([Lasciare un voto])
+    UC6([Inserire opere ed eventi])
+    UC7([Registrare le presenze])
+    UC8([Consultare la dashboard])
+  end
+  V --- UC1 & UC2 & UC3 & UC4 & UC5
+  A --- UC6 & UC7 & UC8

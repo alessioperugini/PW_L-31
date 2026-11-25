@@ -1,0 +1,17 @@
+sequenceDiagram
+  actor V as Visitatore
+  participant B as Browser
+  participant S as Server (FastAPI)
+  participant D as Database
+  V->>B: sceglie i posti e clicca "Prenota"
+  B->>S: POST /api/prenotazioni (token, evento, posti)
+  S->>D: legge l'evento e i posti già prenotati
+  D-->>S: dati dell'evento
+  alt ci sono abbastanza posti
+    S->>D: INSERT della prenotazione
+    S-->>B: 201 Created
+    B-->>V: messaggio di conferma
+  else posti insufficienti o prenotazione già presente
+    S-->>B: 409 Conflict con il motivo
+    B-->>V: messaggio di errore
+  end

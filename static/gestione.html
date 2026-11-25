@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestione – Museo Civico di Borgo San Valerio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/comune.js" defer></script>
+  <script src="js/gestione.js" defer></script>
+</head>
+<body>
+  <header id="testata"></header>
+  <main class="contenitore">
+    <h1>Gestione del museo</h1>
+    <p class="sottotitolo">Area riservata all'amministratore.</p>
+    <div class="avviso" id="messaggio"></div>
+
+    <section id="dashboard">
+      <h2>Indicatori</h2>
+      <div class="kpi" id="kpi"></div>
+      <div class="grafici">
+        <div class="scheda"><h3>Riempimento degli eventi (%)</h3><div class="istogramma" id="grafico-eventi"></div></div>
+        <div class="scheda"><h3>Distribuzione dei voti</h3><div class="istogramma" id="grafico-voti"></div></div>
+      </div>
+    </section>
+
+    <section id="sezione-presenze">
+      <h2>Registrazione delle presenze</h2>
+      <div class="filtri"><select id="scelta-evento" aria-label="Evento"></select></div>
+      <div class="tabella-scorrevole"><table>
+        <thead><tr><th>Nominativo</th><th class="numero">Posti</th><th>Stato</th><th></th></tr></thead>
+        <tbody id="elenco-prenotati"></tbody>
+      </table></div>
+    </section>
+
+    <section>
+      <h2>Nuovo evento</h2>
+      <form class="scheda" id="form-evento">
+        <div class="moduli">
+          <div class="campo"><label for="ev-titolo">Titolo</label><input id="ev-titolo" required></div>
+          <div class="campo"><label for="ev-tipo">Tipo</label><select id="ev-tipo">
+            <option value="visita_guidata">Visita guidata</option>
+            <option value="laboratorio">Laboratorio</option>
+            <option value="conferenza">Conferenza</option></select></div>
+          <div class="campo"><label for="ev-data">Data e ora</label><input id="ev-data" type="datetime-local" required></div>
+          <div class="campo"><label for="ev-capienza">Capienza</label><input id="ev-capienza" type="number" min="1" value="25" required></div>
+        </div>
+        <div class="campo"><label for="ev-descrizione">Descrizione</label><input id="ev-descrizione"></div>
+        <button type="submit">Pubblica evento</button>
+      </form>
+    </section>
+  </main>
+  <footer>Prototipo didattico · Project Work L-31 · ente simulato</footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+erDiagram
+  UTENTE ||--o{ PRENOTAZIONE : effettua
+  EVENTO ||--o{ PRENOTAZIONE : riceve
+  PRENOTAZIONE ||--o| FEEDBACK : "può avere"
+  UTENTE ||--o{ SESSIONE : apre
+  EVENTO ||--o{ EVENTO_OPERA : ""
+  OPERA ||--o{ EVENTO_OPERA : ""
+  UTENTE {
+    int id PK
+    text email UK
+    text nome
+    text cognome
+    text password_hash
+    text ruolo
+  }
+  SESSIONE {
+    text token PK
+    int utente_id FK
+    text scade_il
+  }
+  EVENTO {
+    int id PK
+    text titolo
+    text tipo
+    text data_ora
+    int capienza
+  }
+  OPERA {
+    int id PK
+    text inventario UK
+    text titolo
+    text autore
+    text sezione
+  }
+  EVENTO_OPERA {
+    int evento_id FK
+    int opera_id FK
+  }
+  PRENOTAZIONE {
+    int id PK
+    int utente_id FK
+    int evento_id FK
+    int posti
+    text stato
+  }
+  FEEDBACK {
+    int id PK
+    int prenotazione_id FK
+    int voto
+    text commento
+  }

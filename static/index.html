@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catalogo – Museo Civico di Borgo San Valerio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/comune.js" defer></script>
+  <script src="js/catalogo.js" defer></script>
+</head>
+<body>
+  <header id="testata"></header>
+  <main class="contenitore">
+    <h1>Catalogo delle opere</h1>
+    <p class="sottotitolo">Cerca le opere del museo per titolo, autore o parola chiave.</p>
+    <form class="filtri" id="ricerca">
+      <input type="search" id="testo" placeholder="Es. Valsecchi, anfora..." aria-label="Testo da cercare">
+      <select id="sezione" aria-label="Sezione">
+        <option value="">Tutte le sezioni</option>
+        <option>Archeologia</option>
+        <option>Pittura antica</option>
+        <option>Ottocento</option>
+        <option>Novecento</option>
+        <option>Arti e mestieri</option>
+      </select>
+      <button type="submit">Cerca</button>
+    </form>
+    <div class="griglia" id="risultati"></div>
+  </main>
+  <footer>Prototipo didattico · Project Work L-31 · ente simulato</footer>
+</body>
+</html>

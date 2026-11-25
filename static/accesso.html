@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accesso – Museo Civico di Borgo San Valerio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/comune.js" defer></script>
+  <script src="js/accesso.js" defer></script>
+</head>
+<body>
+  <header id="testata"></header>
+  <main class="contenitore">
+    <h1>Accedi o registrati</h1>
+    <p class="sottotitolo">Per prenotare un evento serve un account.</p>
+    <div class="avviso" id="messaggio"></div>
+    <div class="moduli">
+      <form class="scheda" id="form-login">
+        <h2>Accedi</h2>
+        <div class="campo"><label for="login-email">Email</label><input id="login-email" type="email" required></div>
+        <div class="campo"><label for="login-password">Password</label><input id="login-password" type="password" required></div>
+        <button type="submit">Accedi</button>
+      </form>
+      <form class="scheda" id="form-registrazione">
+        <h2>Registrati</h2>
+        <div class="campo"><label for="reg-nome">Nome</label><input id="reg-nome" required></div>
+        <div class="campo"><label for="reg-cognome">Cognome</label><input id="reg-cognome" required></div>
+        <div class="campo"><label for="reg-email">Email</label><input id="reg-email" type="email" required></div>
+        <div class="campo"><label for="reg-password">Password (almeno 8 caratteri)</label>
+          <input id="reg-password" type="password" minlength="8" required></div>
+        <label class="consenso"><input type="checkbox" id="reg-consenso">
+          <span>Ho letto l'informativa privacy e acconsento al trattamento dei miei dati per la gestione delle prenotazioni.</span></label>
+        <button type="submit">Crea account</button>
+      </form>
+    </div>
+  </main>
+  <footer>Prototipo didattico · Project Work L-31 · ente simulato</footer>
+</body>
+</html>

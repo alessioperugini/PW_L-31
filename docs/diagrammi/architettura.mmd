@@ -1,0 +1,7 @@
+flowchart LR
+  B["Browser<br/>pagine HTML, CSS, JavaScript"]
+  S["Server Python (FastAPI)<br/>API REST · regole · controllo accessi"]
+  D[("Database SQLite<br/>file museo.db")]
+  B -- "richieste HTTP<br/>dati in JSON" --> S
+  S -- "risposte JSON" --> B
+  S -- "query SQL" --> D
